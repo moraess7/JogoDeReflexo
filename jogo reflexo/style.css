@@ -1,0 +1,106 @@
+/* ===== Reset e corpo da página ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #eef3f8;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+/* ===== Contêiner principal (main no lugar de div) ===== */
+.container {
+    text-align: center;
+}
+
+/* ===== Título ===== */
+h1 {
+    font-size: 22px;
+    color: #333333;
+    margin-bottom: 12px;
+}
+
+/* ===== Placar (tempo e pontos) ===== */
+#placar {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444444;
+    margin-bottom: 12px;
+}
+
+/* ===== Mensagem de resultado final ===== */
+#resultado {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a6e1a;
+    min-height: 22px; /* evita "pulo" do layout ao aparecer */
+    margin-bottom: 8px;
+}
+
+/* ===== Botão Iniciar ===== */
+#btnIniciar {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #6aa84f;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: opacity 0.2s;
+}
+
+#btnIniciar:hover {
+    opacity: 0.85;
+}
+
+/* Estado desabilitado: fica opaco e sem cursor (como na imagem) */
+#btnIniciar:disabled {
+    background-color: #a0a0a0;
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* ===== Área de jogo (contêiner fechado) ===== */
+#areaJogo {
+    position: relative;        /* referência para o posicionamento absoluto do alvo */
+    width: 420px;
+    height: 320px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 2px solid #333333;
+    border-radius: 6px;
+    overflow: hidden;          /* garante que o alvo nunca "vaze" da área */
+}
+
+/* ===== Alvo circular vermelho ===== */
+#alvo {
+    position: absolute;        /* será movido via style.left / style.top */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e03131;
+    cursor: pointer;
+    /* Inicia escondido, fora de cena, até o jogo começar */
+    display: none;
+}
+
+/* Detalhe branco central, como o alvo da imagem */
+#alvo::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}

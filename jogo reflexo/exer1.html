@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino de Reflexo Rápido</title>
+    <link rel="stylesheet" href="style.css">
+<base target="_blank">
+</head>
+<body>
+
+    <!-- Conteúdo principal da página (sem div!) -->
+    <main class="container">
+
+        <h1>Treino de Reflexo Rápido</h1>
+
+        <!-- Indicador de tempo e pontuação -->
+        <p id="placar">Tempo restante: 10s | Pontos: 0</p>
+
+        <!-- Botão de início do desafio -->
+        <button id="btnIniciar">Iniciar Desafio</button>
+
+        <!-- Mensagem de resultado final (visível ao fim do jogo) -->
+        <p id="resultado"></p>
+
+        <!-- Área de jogo: contêiner fechado com borda visível -->
+        <section id="areaJogo">
+            <!-- Alvo circular vermelho (elemento semântico article) -->
+            <article id="alvo"></article>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
